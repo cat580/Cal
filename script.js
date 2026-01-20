@@ -12,6 +12,157 @@ const DEFICIT_FACTORS = {
   aggressive: 0.7,
 };
 
+// SECTION: Recipes Database
+const RECIPES = {
+  "chicken rice bowl": {
+    ingredients: [
+      { name: "chicken breast", amount: "150g" },
+      { name: "white rice", amount: "80g dry" },
+      { name: "broccoli", amount: "100g" },
+      { name: "olive oil", amount: "1 tbsp" }
+    ],
+    nutrition: { calories: 450, protein: 35, carbs: 45, fats: 12 }
+  },
+  "tuna salad": {
+    ingredients: [
+      { name: "canned tuna", amount: "1 can (120g)" },
+      { name: "mixed greens", amount: "100g" },
+      { name: "cherry tomatoes", amount: "50g" },
+      { name: "olive oil", amount: "2 tbsp" }
+    ],
+    nutrition: { calories: 320, protein: 28, carbs: 8, fats: 18 }
+  },
+  "protein smoothie": {
+    ingredients: [
+      { name: "protein powder", amount: "1 scoop (30g)" },
+      { name: "banana", amount: "1 medium" },
+      { name: "milk", amount: "250ml" },
+      { name: "peanut butter", amount: "1 tbsp" }
+    ],
+    nutrition: { calories: 280, protein: 25, carbs: 30, fats: 8 }
+  },
+  "oatmeal with berries": {
+    ingredients: [
+      { name: "oats", amount: "50g dry" },
+      { name: "mixed berries", amount: "100g" },
+      { name: "milk", amount: "200ml" },
+      { name: "honey", amount: "1 tbsp" }
+    ],
+    nutrition: { calories: 250, protein: 8, carbs: 45, fats: 6 }
+  },
+  "grilled salmon": {
+    ingredients: [
+      { name: "salmon fillet", amount: "150g" },
+      { name: "asparagus", amount: "100g" },
+      { name: "sweet potato", amount: "100g" },
+      { name: "olive oil", amount: "1 tbsp" }
+    ],
+    nutrition: { calories: 380, protein: 40, carbs: 20, fats: 22 }
+  },
+  "pasta with chicken": {
+    ingredients: [
+      { name: "whole wheat pasta", amount: "80g dry" },
+      { name: "chicken breast", amount: "120g" },
+      { name: "tomato sauce", amount: "100g" },
+      { name: "parmesan cheese", amount: "20g" }
+    ],
+    nutrition: { calories: 520, protein: 32, carbs: 58, fats: 16 }
+  },
+  "greek yogurt parfait": {
+    ingredients: [
+      { name: "greek yogurt", amount: "150g" },
+      { name: "granola", amount: "30g" },
+      { name: "mixed berries", amount: "50g" },
+      { name: "honey", amount: "1 tsp" }
+    ],
+    nutrition: { calories: 180, protein: 15, carbs: 22, fats: 4 }
+  },
+  "avocado toast": {
+    ingredients: [
+      { name: "whole grain bread", amount: "2 slices" },
+      { name: "avocado", amount: "1 medium" },
+      { name: "tomato", amount: "50g" },
+      { name: "olive oil", amount: "1 tsp" }
+    ],
+    nutrition: { calories: 290, protein: 8, carbs: 24, fats: 18 }
+  }
+};
+
+// SECTION: 4-Week Meal Plan
+const MEAL_PLAN = {
+  week1: {
+    monday: {
+      breakfast: "oatmeal with berries",
+      lunch: "chicken rice bowl", 
+      dinner: "grilled salmon",
+      snack: "greek yogurt parfait"
+    },
+    tuesday: {
+      breakfast: "protein smoothie",
+      lunch: "tuna salad",
+      dinner: "pasta with chicken",
+      snack: "avocado toast"
+    },
+    wednesday: {
+      breakfast: "greek yogurt parfait",
+      lunch: "grilled salmon",
+      dinner: "chicken rice bowl",
+      snack: "protein smoothie"
+    },
+    thursday: {
+      breakfast: "avocado toast",
+      lunch: "pasta with chicken",
+      dinner: "tuna salad",
+      snack: "oatmeal with berries"
+    },
+    friday: {
+      breakfast: "protein smoothie",
+      lunch: "chicken rice bowl",
+      dinner: "grilled salmon",
+      snack: "greek yogurt parfait"
+    },
+    saturday: {
+      breakfast: "oatmeal with berries",
+      lunch: "tuna salad",
+      dinner: "pasta with chicken",
+      snack: "avocado toast"
+    },
+    sunday: {
+      breakfast: "greek yogurt parfait",
+      lunch: "grilled salmon",
+      dinner: "chicken rice bowl",
+      snack: "protein smoothie"
+    }
+  },
+  week2: {
+    monday: { breakfast: "protein smoothie", lunch: "tuna salad", dinner: "pasta with chicken", snack: "greek yogurt parfait" },
+    tuesday: { breakfast: "avocado toast", lunch: "chicken rice bowl", dinner: "grilled salmon", snack: "oatmeal with berries" },
+    wednesday: { breakfast: "greek yogurt parfait", lunch: "pasta with chicken", dinner: "tuna salad", snack: "protein smoothie" },
+    thursday: { breakfast: "oatmeal with berries", lunch: "grilled salmon", dinner: "chicken rice bowl", snack: "avocado toast" },
+    friday: { breakfast: "protein smoothie", lunch: "tuna salad", dinner: "pasta with chicken", snack: "greek yogurt parfait" },
+    saturday: { breakfast: "avocado toast", lunch: "chicken rice bowl", dinner: "grilled salmon", snack: "oatmeal with berries" },
+    sunday: { breakfast: "greek yogurt parfait", lunch: "pasta with chicken", dinner: "tuna salad", snack: "protein smoothie" }
+  },
+  week3: {
+    monday: { breakfast: "oatmeal with berries", lunch: "grilled salmon", dinner: "pasta with chicken", snack: "protein smoothie" },
+    tuesday: { breakfast: "greek yogurt parfait", lunch: "chicken rice bowl", dinner: "tuna salad", snack: "avocado toast" },
+    wednesday: { breakfast: "protein smoothie", lunch: "pasta with chicken", dinner: "grilled salmon", snack: "oatmeal with berries" },
+    thursday: { breakfast: "avocado toast", lunch: "tuna salad", dinner: "chicken rice bowl", snack: "greek yogurt parfait" },
+    friday: { breakfast: "oatmeal with berries", lunch: "grilled salmon", dinner: "pasta with chicken", snack: "protein smoothie" },
+    saturday: { breakfast: "greek yogurt parfait", lunch: "chicken rice bowl", dinner: "tuna salad", snack: "avocado toast" },
+    sunday: { breakfast: "protein smoothie", lunch: "pasta with chicken", dinner: "grilled salmon", snack: "oatmeal with berries" }
+  },
+  week4: {
+    monday: { breakfast: "greek yogurt parfait", lunch: "tuna salad", dinner: "chicken rice bowl", snack: "protein smoothie" },
+    tuesday: { breakfast: "oatmeal with berries", lunch: "pasta with chicken", dinner: "grilled salmon", snack: "avocado toast" },
+    wednesday: { breakfast: "protein smoothie", lunch: "chicken rice bowl", dinner: "tuna salad", snack: "greek yogurt parfait" },
+    thursday: { breakfast: "avocado toast", lunch: "grilled salmon", dinner: "pasta with chicken", snack: "oatmeal with berries" },
+    friday: { breakfast: "greek yogurt parfait", lunch: "tuna salad", dinner: "chicken rice bowl", snack: "protein smoothie" },
+    saturday: { breakfast: "oatmeal with berries", lunch: "pasta with chicken", dinner: "grilled salmon", snack: "avocado toast" },
+    sunday: { breakfast: "protein smoothie", lunch: "chicken rice bowl", dinner: "tuna salad", snack: "greek yogurt parfait" }
+  }
+};
+
 // SECTION: State
 let entries = [];
 const STORAGE_KEY = "fueltrack_profiles_v1";
@@ -64,6 +215,47 @@ const securityForm = document.getElementById("security-form");
 const pinModal = document.getElementById("pin-modal");
 const pinForm = document.getElementById("pin-form");
 const pinCancelBtn = document.getElementById("pin-cancel");
+
+// SECTION: Recipe and Meal Plan Functions
+function autoFillFromRecipe(foodName) {
+  const recipe = RECIPES[foodName.toLowerCase().trim()];
+  if (recipe) {
+    const { calories, protein, carbs, fats } = recipe.nutrition;
+    document.getElementById("calories").value = calories;
+    document.getElementById("protein").value = protein;
+    document.getElementById("carbs").value = carbs;
+    document.getElementById("fats").value = fats;
+  }
+}
+
+function showRecipeDetails(foodName) {
+  const recipe = RECIPES[foodName.toLowerCase().trim()];
+  if (recipe) {
+    const ingredientsList = recipe.ingredients
+      .map(ing => `• ${ing.amount} ${ing.name}`)
+      .join('\n');
+    alert(`${foodName}\n\nIngredients:\n${ingredientsList}`);
+  } else {
+    alert("Recipe not found");
+  }
+}
+
+function getTodaysMeals() {
+  const today = new Date();
+  const dayName = today.toLocaleDateString('en', { weekday: 'long' }).toLowerCase();
+  const weekNumber = Math.ceil(today.getDate() / 7);
+  const weekKey = `week${Math.min(weekNumber, 4)}`;
+  
+  return MEAL_PLAN[weekKey]?.[dayName] || null;
+}
+
+function showTodaysMealPlan() {
+  const meals = getTodaysMeals();
+  if (meals) {
+    const mealText = `Today's Meal Plan:\n\nBreakfast: ${meals.breakfast}\nLunch: ${meals.lunch}\nDinner: ${meals.dinner}\nSnack: ${meals.snack}`;
+    alert(mealText);
+  }
+}
 
 // SECTION: Security functions
 function hashPin(pin) {
@@ -349,6 +541,15 @@ function sanitizeText(text) {
 function renderFoodSuggestions() {
   if (!foodSuggestionsEl) return;
   foodSuggestionsEl.innerHTML = "";
+  
+  // Add recipes to suggestions
+  Object.keys(RECIPES).forEach((recipeName) => {
+    const opt = document.createElement("option");
+    opt.value = recipeName;
+    foodSuggestionsEl.appendChild(opt);
+  });
+  
+  // Add user's food dictionary
   const dict = getActiveFoodDictionary();
   Object.values(dict).forEach((item) => {
     const opt = document.createElement("option");
@@ -781,6 +982,27 @@ function init() {
 
   if (needsForm) {
     needsForm.addEventListener("submit", handleNeedsSubmit);
+  }
+
+  // Recipe and meal plan buttons
+  const viewRecipeBtn = document.getElementById("view-recipe");
+  if (viewRecipeBtn) {
+    viewRecipeBtn.addEventListener("click", () => {
+      const foodName = document.getElementById("food-name").value;
+      showRecipeDetails(foodName);
+    });
+  }
+
+  const mealPlanBtn = document.getElementById("meal-plan-btn");
+  if (mealPlanBtn) {
+    mealPlanBtn.addEventListener("click", showTodaysMealPlan);
+  }
+
+  // Auto-fill from recipes when food name changes
+  if (foodNameInput) {
+    foodNameInput.addEventListener("blur", (e) => {
+      autoFillFromRecipe(e.target.value);
+    });
   }
 
   // Keyboard support for modals
